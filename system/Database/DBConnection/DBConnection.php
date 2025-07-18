@@ -3,7 +3,7 @@ namespace System\Database\DBConnection;
 use PDO;
 use PDOException;
 
-      class DBConnection
+     class DBConnection
     {
         private static $dbConnection=null;
     

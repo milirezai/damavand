@@ -23,10 +23,10 @@ SET time_zone = \"+00:00\";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ads`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `ads` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `title` varchar(191) NOT NULL,
   `description` text NOT NULL,
@@ -58,9 +58,9 @@ CREATE TABLE `ads` (
 --
 
 --
--- Indexes for table `ads`
+-- Indexes for table `users`
 --
-ALTER TABLE `ads`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -68,9 +68,9 @@ ALTER TABLE `ads`
 --
 
 --
--- AUTO_INCREMENT for table `ads`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `ads`
+ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
     "

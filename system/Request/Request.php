@@ -75,7 +75,6 @@ class Request
 
     }
 
-
     public function all()
     {
         return $this->request;

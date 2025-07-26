@@ -16,7 +16,7 @@ class DBBuilder
     private  function getMigrations()
     {
         $oldMigrationsArray=$this->getOldMigrations();; // reading migrations
-        $migrationsDirectory= BASE_DIR.DIRECTORY_SEPARATOR."database".DIRECTORY_SEPARATOR."migrations".DIRECTORY_SEPARATOR;
+        $migrationsDirectory= Config::get("app.BASE_DIR").DIRECTORY_SEPARATOR."database".DIRECTORY_SEPARATOR."migrations".DIRECTORY_SEPARATOR;
         $allMigrationsArray=glob($migrationsDirectory."*.php"); // all migrations
         $newMigrationsArray= array_diff($allMigrationsArray,$oldMigrationsArray);
         $this->putOldMigrations($allMigrationsArray);

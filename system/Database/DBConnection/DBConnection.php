@@ -2,8 +2,9 @@
 namespace System\Database\DBConnection;
 use PDO;
 use PDOException;
+use System\Config\Config;
 
-     class DBConnection
+class DBConnection
     {
         private static $dbConnection=null;
     
@@ -25,7 +26,7 @@ use PDOException;
             $options=array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
             try
             {
-                return new PDO("mysql:host=".DBHOST.";dbname=".DBNAME,DBUSERNAME,DBPASSWORD,$options);
+                return new PDO("mysql:host=".Config::get("database.DBHOST").";dbname=".Config::get("database.DBNAME"),Config::get("database.DBUSERNAME"),Config::get("database.DBPASSWORD"),$options);
             }
             catch (PDOException $e)
             {

@@ -3,6 +3,7 @@
 namespace System\Router;
 
 use ReflectionMethod;
+use System\Config\Config;
 
 class Routing{
 
@@ -13,7 +14,7 @@ class Routing{
 
     public function __construct()
     {
-        $this->current_route = explode('/', CURRENT_ROUT);
+        $this->current_route = explode('/', Config::get("app.CURRENT_ROUT"));
         $this->method_field = $this->methodField();
         global $routes;
         $this->routes = $routes;
@@ -27,7 +28,7 @@ class Routing{
         $this->error404();
       }
       $classPath = str_replace('\\', '/', $match["class"]);
-      $path = BASE_DIR . "/app/Http/Controllers/".$classPath.".php";
+      $path = Config::get("app.BASE_DIR") . "/app/Http/Controllers/".$classPath.".php";
       if(!file_exists($path))
       {
         $this->error404();
@@ -98,7 +99,7 @@ class Routing{
     public function error404()
     {
       http_response_code(404);
-      include __DIR__ . DIRECTORY_SEPARATOR .'404'.DIRECTORY_SEPARATOR .'index.html';
+      include __DIR__ . DIRECTORY_SEPARATOR .'404'.DIRECTORY_SEPARATOR .'index.php';
       exit;
     }
 

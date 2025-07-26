@@ -3,25 +3,90 @@ namespace App;
 
 use System\Database\ORM\Model;
 
+    /*
+    |--------------------------------------------------------------------------
+    | class User
+    |--------------------------------------------------------------------------
+    |
+    | Models represent database tables
+    | They inherit from the original model
+    |
+    */
 
 class User extends Model
 {
-    # table => نام جدولی که این کلاس نماینده اونه
-    # fillable => نام فیلد هایی که از این جدول می تونه پر شه
-    # hidden => فیلد هایی که اطلاعات اون مخفی باشه 
-    # casts =>  هستند casts فیلد هایی که جزو 
-    # primaryKey => جدول فعلی اگر پیشفرض ای دی است
-    # createdAT => اسم این فیلد درون جدول
-    # updatedAT => اسم این فیلد درون جدول
-    # deletedAT => به اسم این فیلد درون جدول
 
+    /*
+    |--------------------------------------------------------------------------
+    | Property table
+    |--------------------------------------------------------------------------
+    |
+    | Models represent database tables
+    | Stores the table name represented by this class.
+    |
+    */
      protected $table;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Property fillable
+    |--------------------------------------------------------------------------
+    |
+    | We specify the required fields
+    | that need filling
+    |
+    */
      protected $fillable= [];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Property hidden 
+    |--------------------------------------------------------------------------
+    |
+    | Key information fields
+    | and specify the need for data privacy
+    |
+    */
      protected $hidden= [];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Property casts
+    |--------------------------------------------------------------------------
+    |
+    |
+    |
+    */
      protected $casts= [];
+
+    /*
+    |--------------------------------------------------------------------------
+    | Property primaryKey
+    |--------------------------------------------------------------------------
+    |
+    | The primaryKey table is essential
+    | The default is ID
+    | It is changeable
+    | But it is not recommended.
+    |
+    */
      protected $primaryKey= 'id';
+
+    /*
+    |--------------------------------------------------------------------------
+    | Property createdAT , updatedAT , deletedAT
+    |--------------------------------------------------------------------------
+    |
+    | These fields are key
+    | Default values are specified
+    | Their values are set when a column is created, updated, or deleted from the table
+    | They are automatically quantified
+    |
+    */
      protected $createdAT= 'createdAT';
+
      protected $updatedAT= 'updatedAT';
+
      protected $deletedAT= null;
-     
+    
 }
